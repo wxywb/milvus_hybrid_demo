@@ -21,8 +21,6 @@ def get_collection():
     return col
 
 
-def search_from_source(source, query):
-    return [f"{source} Result {i+1} for {query}" for i in range(5)]
 
 st.title("Milvus Hybird Search Demo")
 
@@ -58,9 +56,8 @@ def doc_text_colorization(query, docs):
         color_text = '' 
         for i, c in enumerate(doc):
             if ldx == len(landmarks):
-                color_text += c
-                continue
-            if i == landmarks[ldx]:
+                pass
+            elif  i == landmarks[ldx]:
                 if close is True:
                     color_text += ']'
                 else:
