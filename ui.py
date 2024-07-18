@@ -58,6 +58,7 @@ def doc_text_colorization(query, docs):
         color_text = '' 
         for i, c in enumerate(doc):
             if ldx == len(landmarks):
+                color_text += c
                 continue
             if i == landmarks[ldx]:
                 if close is True:
